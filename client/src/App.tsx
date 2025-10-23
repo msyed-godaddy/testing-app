@@ -4,6 +4,7 @@ import remarkGfm from 'remark-gfm';
 import MDEditor from '@uiw/react-markdown-editor';
 import MDEditorNew from '@uiw/react-md-editor';
 import { AdPreviewContainer } from '@wsb/ms-content-ui-components';
+import '@wsb/ms-content-ui-components/dist/index.css';
 import './App.css';
 
 interface Content {
