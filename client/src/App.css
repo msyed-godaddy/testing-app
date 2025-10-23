@@ -1,0 +1,630 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.App-header p {
+  margin: 10px 0 0 0;
+  opacity: 0.8;
+}
+
+.App-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.message {
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.edit-mode {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.title-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.title-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Markdown Editor Container */
+.markdown-editor-container {
+  margin-bottom: 20px;
+}
+
+.markdown-editor-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.markdown-editor {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.markdown-editor:focus-within {
+  border-color: #007bff;
+}
+
+/* Force Light Mode and Ensure Preview is Visible */
+.markdown-editor .w-md-editor { 
+  border: none !important; 
+  background-color: #ffffff !important; 
+  color: #24292e !important; 
+}
+
+/* Toolbar Light Mode */
+.markdown-editor .w-md-editor-toolbar { 
+  background-color: #f6f8fa !important; 
+  border-bottom: 1px solid #e1e4e8 !important; 
+  color: #24292e !important; 
+}
+
+.markdown-editor .w-md-editor-toolbar-divider { 
+  background-color: #e1e4e8 !important; 
+}
+
+.markdown-editor .w-md-editor-toolbar ul li button { 
+  color: #24292e !important; 
+  background-color: transparent !important; 
+}
+
+.markdown-editor .w-md-editor-toolbar ul li button:hover { 
+  background-color: #e1e4e8 !important; 
+}
+
+.markdown-editor .w-md-editor-toolbar ul li button.active { 
+  background-color: #0366d6 !important; 
+  color: white !important; 
+}
+
+/* Editor Area Light Mode */
+.markdown-editor .w-md-editor-text { 
+  background-color: #ffffff !important; 
+  color: #24292e !important; 
+}
+
+.markdown-editor .w-md-editor-text-pre, 
+.markdown-editor .w-md-editor-text-input { 
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important; 
+  font-size: 13px !important; 
+  line-height: 1.5 !important; 
+  background-color: #ffffff !important; 
+  color: #24292e !important; 
+}
+
+/* Preview Area Light Mode */
+.markdown-editor .w-md-editor-preview { 
+  background-color: #ffffff !important; 
+  color: #24292e !important; 
+  padding: 16px !important; 
+  border-left: 1px solid #e1e4e8 !important; 
+}
+
+/* Preview Content Light Mode */
+.markdown-editor .w-md-editor-preview h1,
+.markdown-editor .w-md-editor-preview h2,
+.markdown-editor .w-md-editor-preview h3,
+.markdown-editor .w-md-editor-preview h4,
+.markdown-editor .w-md-editor-preview h5,
+.markdown-editor .w-md-editor-preview h6 {
+  color: #24292e !important;
+  border-bottom-color: #e1e4e8 !important;
+}
+
+.markdown-editor .w-md-editor-preview p {
+  color: #24292e !important;
+}
+
+.markdown-editor .w-md-editor-preview code {
+  background-color: #f6f8fa !important;
+  color: #e36209 !important;
+  border: 1px solid #e1e4e8 !important;
+}
+
+.markdown-editor .w-md-editor-preview pre {
+  background-color: #f6f8fa !important;
+  border: 1px solid #e1e4e8 !important;
+}
+
+.markdown-editor .w-md-editor-preview pre code {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.markdown-editor .w-md-editor-preview blockquote {
+  border-left-color: #dfe2e5 !important;
+  color: #6a737d !important;
+}
+
+.markdown-editor .w-md-editor-preview table {
+  border-color: #e1e4e8 !important;
+}
+
+.markdown-editor .w-md-editor-preview table th,
+.markdown-editor .w-md-editor-preview table td {
+  border-color: #e1e4e8 !important;
+  background-color: #ffffff !important;
+}
+
+.markdown-editor .w-md-editor-preview table tr:nth-child(2n) {
+  background-color: #f6f8fa !important;
+}
+
+.markdown-editor .w-md-editor-preview a {
+  color: #0366d6 !important;
+}
+
+.markdown-editor .w-md-editor-preview ul,
+.markdown-editor .w-md-editor-preview ol {
+  color: #24292e !important;
+}
+
+/* Ensure Split Pane Layout */
+.markdown-editor .w-md-editor-content { 
+  display: flex !important; 
+}
+
+.markdown-editor .w-md-editor-text, 
+.markdown-editor .w-md-editor-preview { 
+  flex: 1 !important; 
+  min-width: 0 !important; 
+}
+
+/* React MD Editor Container */
+.react-md-editor-container {
+  margin-bottom: 20px;
+}
+
+.react-md-editor-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.react-md-editor {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.react-md-editor:focus-within {
+  border-color: #007bff;
+}
+
+/* Force Light Mode for React MD Editor */
+.react-md-editor [data-color-mode="light"] {
+  background-color: #ffffff !important;
+  color: #24292e !important;
+}
+
+.react-md-editor .w-md-editor {
+  border: none !important;
+  background-color: #ffffff !important;
+  color: #24292e !important;
+}
+
+.react-md-editor .w-md-editor-toolbar {
+  background-color: #f6f8fa !important;
+  border-bottom: 1px solid #e1e4e8 !important;
+  color: #24292e !important;
+}
+
+.react-md-editor .w-md-editor-text {
+  background-color: #ffffff !important;
+  color: #24292e !important;
+}
+
+.react-md-editor .w-md-editor-preview {
+  background-color: #ffffff !important;
+  color: #24292e !important;
+  border-left: 1px solid #e1e4e8 !important;
+}
+
+/* Additional styling to fix dark backgrounds and borders */
+.react-md-editor .w-md-editor-content {
+  background-color: #ffffff !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown {
+  background-color: #ffffff !important;
+  color: #24292e !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown h1,
+.react-md-editor .w-md-editor-preview .wmde-markdown h2,
+.react-md-editor .w-md-editor-preview .wmde-markdown h3,
+.react-md-editor .w-md-editor-preview .wmde-markdown h4,
+.react-md-editor .w-md-editor-preview .wmde-markdown h5,
+.react-md-editor .w-md-editor-preview .wmde-markdown h6 {
+  color: #24292e !important;
+  border-bottom-color: #e1e4e8 !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown p {
+  color: #24292e !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown code {
+  background-color: #f6f8fa !important;
+  color: #e36209 !important;
+  border: 1px solid #e1e4e8 !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown pre {
+  background-color: #f6f8fa !important;
+  border: 1px solid #e1e4e8 !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown pre code {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown blockquote {
+  border-left-color: #dfe2e5 !important;
+  color: #6a737d !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown table {
+  border-color: #e1e4e8 !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown table th,
+.react-md-editor .w-md-editor-preview .wmde-markdown table td {
+  border-color: #e1e4e8 !important;
+  background-color: #ffffff !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown table tr:nth-child(2n) {
+  background-color: #f6f8fa !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown a {
+  color: #0366d6 !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown ul,
+.react-md-editor .w-md-editor-preview .wmde-markdown ol {
+  color: #24292e !important;
+}
+
+/* Remove any dark borders */
+.react-md-editor .w-md-editor-preview {
+  border: none !important;
+}
+
+.react-md-editor .w-md-editor-preview .wmde-markdown {
+  border: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .markdown-editor .w-md-editor-content {
+    flex-direction: column !important;
+  }
+  
+  .markdown-editor .w-md-editor-text,
+  .markdown-editor .w-md-editor-preview {
+    flex: none !important;
+    width: 100% !important;
+  }
+  
+  .markdown-editor .w-md-editor-preview {
+    border-left: none !important;
+    border-top: 1px solid #e1e4e8 !important;
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #545b62;
+}
+
+.view-mode {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eee;
+}
+
+.content-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 2rem;
+}
+
+.markdown-content {
+  line-height: 1.6;
+  color: #333;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-content h1 {
+  font-size: 2em;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+}
+
+.markdown-content h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+}
+
+.markdown-content h3 {
+  font-size: 1.25em;
+}
+
+.markdown-content p {
+  margin-bottom: 16px;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin-bottom: 16px;
+  padding-left: 2em;
+}
+
+.markdown-content li {
+  margin-bottom: 4px;
+}
+
+.markdown-content code {
+  background-color: #f6f8fa;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 85%;
+}
+
+.markdown-content pre {
+  background-color: #f6f8fa;
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+.markdown-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.markdown-content blockquote {
+  margin: 0 0 16px 0;
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+.markdown-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+  text-align: left;
+}
+
+.markdown-content th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+
+.markdown-content a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-content a:hover {
+  text-decoration: underline;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.markdown-content hr {
+  height: 0.25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #e1e4e8;
+  border: 0;
+}
+
+/* Edit Buttons Layout */
+.edit-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.edit-buttons .btn {
+  flex: 1;
+  max-width: 200px;
+}
+
+/* Plain Text Editor */
+.plain-text-editor-container {
+  margin-bottom: 20px;
+}
+
+.plain-text-editor-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.plain-text-editor {
+  width: 100%;
+  min-height: 400px;
+  padding: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #ffffff;
+  color: #24292e;
+  resize: vertical;
+}
+
+.plain-text-editor:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.editor-info {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.editor-info p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .edit-buttons {
+    flex-direction: column;
+  }
+  
+  .edit-buttons .btn {
+    max-width: none;
+  }
+}
