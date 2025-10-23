@@ -1,4 +1,4 @@
-# GoDaddy Testing App
+# Testing App
 
 A general testing and POC application for GoDaddy components, built with React + Express. Used to test UI components and new features.
 
