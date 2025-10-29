@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import MDEditor from '@uiw/react-markdown-editor';
 import MDEditorNew from '@uiw/react-md-editor';
-import { AdPreviewContainer } from '@wsb/ms-content-ui-components';
+import { AdPreviewContainer, AD_PREVIEW_TYPE } from '@wsb/ms-content-ui-components';
 import '@wsb/ms-content-ui-components/dist/index.css';
 import './App.css';
 
@@ -214,11 +214,12 @@ function App() {
             <div className="component-demo">
               <h3>Ad Preview Components Demo</h3>
               
-              {/* Facebook Ad */}
+              {/* Facebook News Feed Ad */}
               <div className="ad-preview-section" style={{ marginBottom: '40px' }}>
-                <h4>Facebook Ad Preview:</h4>
+                <h4>Facebook News Feed Ad Preview:</h4>
                 <AdPreviewContainer
                   provider="fb"
+                  previewType={AD_PREVIEW_TYPE.FB_NEWS_FEED}
                   adContent={{
                     title: 'Start a New Chapter With Our Realtors',
                     message: 'Being a top-selling real estate team, homeowners trust us for expert guidance, seamless service, and proven success. Call us today: 900-MOCK-DATA.',
@@ -227,7 +228,6 @@ function App() {
                     imageUrl: 'https://img1.wsimg.com/isteam/ip/41db0615-614b-4a50-8491-435c4058bde7/blob-0010-e4a6632.png',
                     details: 'Thinking of making a move? Contact us today!'
                   }}
-                  platforms={['FACEBOOK', 'INSTAGRAM']}
                   websiteDomain="mock-data.com"
                   businessName="McKee Kubasko Group of Long & Foster Real Estate"
                   connection={{
@@ -236,11 +236,55 @@ function App() {
                 />
               </div>
 
-              {/* Google Ad */}
+              {/* Instagram News Feed Ad */}
+              <div className="ad-preview-section" style={{ marginBottom: '40px' }}>
+                <h4>Instagram News Feed Ad Preview:</h4>
+                <AdPreviewContainer
+                  provider="fb"
+                  previewType={AD_PREVIEW_TYPE.IG_NEWS_FEED}
+                  adContent={{
+                    title: 'Professional Real Estate Services',
+                    message: 'We advocate for our clients and make the process of selling a home as painless as possible. See your house estimate today.',
+                    buttonLabel: 'CONTACT_US',
+                    linkUrl: 'http://mock-data.com/',
+                    imageUrl: 'https://img1.wsimg.com/isteam/ip/41db0615-614b-4a50-8491-435c4058bde7/blob-0012.png',
+                    details: "We'll get your house off your hands."
+                  }}
+                  websiteDomain="mock-data.com"
+                  businessName="McKee Kubasko Group"
+                  connection={{
+                    profilePhoto: 'https://scontent-iad3-2.xx.fbcdn.net'
+                  }}
+                />
+              </div>
+
+              {/* Instagram Stories Ad */}
+              <div className="ad-preview-section" style={{ marginBottom: '40px' }}>
+                <h4>Instagram Stories Ad Preview:</h4>
+                <AdPreviewContainer
+                  provider="fb"
+                  previewType={AD_PREVIEW_TYPE.IG_STORIES}
+                  adContent={{
+                    title: 'Your Dream Home Awaits',
+                    message: 'Expert real estate guidance for buyers and sellers. Contact us for a free consultation.',
+                    buttonLabel: 'LEARN_MORE',
+                    linkUrl: 'http://mock-data.com/',
+                    imageUrl: 'https://img1.wsimg.com/isteam/ip/41db0615-614b-4a50-8491-435c4058bde7/blob-0010-e4a6632.png'
+                  }}
+                  websiteDomain="mock-data.com"
+                  businessName="McKee Kubasko Group"
+                  connection={{
+                    profilePhoto: 'https://scontent-iad3-2.xx.fbcdn.net'
+                  }}
+                />
+              </div>
+
+              {/* Google Search Ad */}
               <div className="ad-preview-section">
-                <h4>Google Ad Preview:</h4>
+                <h4>Google Search Ad Preview:</h4>
                 <AdPreviewContainer
                   provider="googleAds"
+                  previewType={AD_PREVIEW_TYPE.GOOGLE_SEARCH}
                   adContent={{
                     headlines: ['Amazing Product Sale', '50% Off Everything', 'Limited Time Only'],
                     descriptions: ['Get 50% off on all products this week only!', 'Shop now and save big on your favorite items.'],
@@ -248,7 +292,6 @@ function App() {
                     linkUrl: 'https://example.com',
                     phoneNumber: '555-1234'
                   }}
-                  platforms={['GOOGLE']}
                   websiteDomain="example.com"
                   businessName="Amazing Products Store"
                 />
